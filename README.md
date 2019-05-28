@@ -1,15 +1,18 @@
 ## Keycloak
 
-Start server
+#### 1. Start server
 
 ```bash
 docker run --name keycloak -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
 ```
 
-Add client
+#### 2. Add client
 
 ![](images/Client.png)
 
-Test
+#### 3. Test
 
-- http://localhost:5000/api/hello/hello
+```bash
+dotnet run --project src/Connect22/Connect22.csproj
+open http://localhost:5000/api/hello/hello
+```
