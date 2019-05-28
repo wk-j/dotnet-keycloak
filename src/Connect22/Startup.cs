@@ -37,10 +37,11 @@ namespace Connect22 {
                     options.Authority = "http://localhost:8080/auth/realms/master";
                     options.RequireHttpsMetadata = false;
                     options.ClientId = "hello";
-                    //options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
-                    options.SignedOutRedirectUri = "/sigin";
+                    options.ClientSecret = "3e95fbf4-09e7-4f28-bfdc-af567a7067a6";
+                    options.ResponseType = OpenIdConnectResponseType.CodeIdTokenToken;
+                    options.SignedOutRedirectUri = "/signin-oidc";
 
-                    options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
+                    //options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
 
                     options.Events = new OpenIdConnectEvents {
                         OnTicketReceived = async x => {

@@ -5,7 +5,7 @@ using PS = StartProcess.Processor;
 using ProjectParser;
 
 var nugetToken = EnvironmentVariable("npi");
-var name = "Connect";
+var name = "Connect22";
 
 var currentDir = new DirectoryInfo(".").FullName;
 var info = Parser.Parse($"src/{name}/{name}.csproj");
@@ -35,6 +35,7 @@ Task("Publish-NuGet")
 });
 
 Task("Start-Keycloak").Does(() => {
+    PS.StartProcess("docker rm keycloak");
     PS.StartProcess("docker run --name keycloak -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak");
 });
 

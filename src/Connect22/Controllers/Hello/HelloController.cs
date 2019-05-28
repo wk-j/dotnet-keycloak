@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Connect.Controllers.Hello {
+namespace Connect22.Controllers.Hello {
     [ApiController]
     [Route("api/[controller]/[action]")]
     [Authorize]
